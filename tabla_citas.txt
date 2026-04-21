@@ -1,0 +1,9 @@
+CREATE TABLE citas (
+    id_cita SERIAL PRIMARY KEY,
+    id_cliente INTEGER NOT NULL,
+    id_servicio INTEGER NOT NULL,
+    fecha TEXT NOT NULL,
+    hora TEXT NOT NULL,
+    CONSTRAINT fk_cliente FOREIGN KEY (id_cliente) REFERENCES cliente(id_cliente) ON DELETE CASCADE,
+    CONSTRAINT fk_servicio FOREIGN KEY (id_servicio) REFERENCES servicio(id_servicio) ON DELETE CASCADE
+);
